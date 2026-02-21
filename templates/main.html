@@ -1,0 +1,74 @@
+<!-- тут модуль три() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div >
+        <h1>Тип | наименование матерьяла {{ result if result != None else 'ожидание ввода' }}</h1>
+        <form method="POST">
+            <input type="text" name="chet" placeholder="данные для некого расчета">
+            <button type="submit">Отправить</button>
+        </form>
+        <h1>Стоимость партии: {{ result if result != None else 'ожидание ввода' }}</h1>
+    </div>
+<!-- сюда конкртено пойдут нименование по первому  -->
+
+<div>
+    <h1>Тип | наименование матерьяла</h1>
+    <form method="POST">
+        <input type="text" name="material_name" placeholder="Название" required>
+        <input type="text" name="chet" placeholder="Количество" required>
+        <button type="submit">Рассчитать и добавить</button>
+    </form>
+</div>
+
+
+<h2>Результаты</h2>
+<div id="results-list">
+    {% for item in items %}
+        <div style="border-bottom: 1px solid #ccc; padding: 10px;">
+            <strong>{{ item.name }}</strong> — минимальное кол-во: {{ item.price }}.
+        </div>
+    {% else %}
+        <p>Список пока пуст</p>
+    {% endfor %}
+</div>
+
+    <div>
+        <h1>Тип | наименование матерьяла </h1>
+        <form method="POST">
+            <input type="text" name="chet1" placeholder="данные для некого расчета">
+            <button type="submit">Отправить</button>
+        </form>
+        <h1>Стоимость партии: {{ result1 if result1 != None else 'ожидание ввода' }}</h1>
+    </div>
+
+    <div>
+        <h1>Тип | наименование матерьяла </h1>
+        <form method="POST">
+            <input type="text" name="chet2" placeholder="данные для некого расчета">
+            <button type="submit">Отправить</button>
+        </form>
+        <h1>Стоимость партии: {{ result2 if result2 != None else 'ожидание ввода' }}</h1>
+    </div>
+
+    
+
+<h1>Footer</h1>
+    <form formRetirn="/text" method="post">
+        <input type="text">
+    </form>
+
+    <form action="/click" method="post">
+        <button type="submit">Pick Me!(Volodya)</button>
+    </form>
+
+
+</body>
+</html>
